@@ -1,0 +1,261 @@
+<html>
+<head>
+	<title>Recursive Fill</title>
+
+	<style type="text/css">
+	* {
+		margin:0px;
+		padding:0px;
+	}
+	body{
+		background-color:black;
+	}
+	.row div{
+		width:50px;
+		height:50px;
+		display:inline-block;
+	}
+	.white{
+		background-color:white;
+	}
+	.red{
+		background-color:red;
+	}
+	.yellow{
+		background-color:yellow;
+	}
+	.blue{
+		background-color:blue;
+	}
+	.green{
+		background-color:green;
+	}
+
+
+	</style>
+</head>
+<body>
+
+	<div id='container'></div>
+
+	<script type="text/javascript">
+		var world = [
+			[1,1,1,0,0,0,0,3,2,2],
+			[0,0,0,0,1,0,0,3,3,3],
+			[0,2,2,0,1,0,0,0,0,0],
+			[0,2,2,0,1,1,1,1,0,0],
+			[0,2,2,0,1,0,0,0,0,3],
+			[0,2,2,0,1,0,0,3,3,3],
+			[0,0,0,0,1,0,0,3,3,3]];
+
+		var mapping = {
+			0: 'white',
+			1: 'red',
+			2: 'yellow',
+			3: 'blue',
+			4: 'green'
+		}
+
+		function drawWorld()
+		{
+			var output = '';
+			for(var i=0; i<world.length; i++)
+			{
+				output += '<div class="row">';
+				for(var j=0; j<world[i].length; j++)
+				{
+					output += "<div class='"+mapping[world[i][j]]+"'></div>";
+				}
+				output += '</div>';
+			}
+			document.getElementById('container').innerHTML = output;
+			// console.log(output);
+		}
+
+		document.onclick = function(e)
+		{
+			// console.log('Coordinate Clicked', e.x, e.y);
+
+			var x = Math.floor(e.x/50);
+			var y = Math.floor(e.y/50);
+
+			// console.log('X, Y', x, y);
+			// console.log('Original Color', world[y][x]);
+
+			console.log('Replace color', world[y][x], ' with color 4 starting from x:', x, 'y:', y);
+			fill(x, y, world[y][x], 4);
+		}
+
+		function fill(x,y,original_color, color)
+		{
+
+			//your recursion codes here
+
+			world[y][x] = color;
+
+			// your recursion codes here
+
+			drawWorld();
+			
+		}
+
+		drawWorld();
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+
+//Sigma:
+
+var sum = 0;
+function sigma(num){
+  for( var i = 1;i<=num;i++){
+    sum+=i;
+  }
+  console.log(sum);
+  return sum;
+}
+
+sigma(12);
+
+
+//Factorial
+
+var facto = 1; 
+function factorial(num){
+  for(var i = 1;i<num; i++){
+    facto *=i;
+  }
+
+  return facto;
+}
+console.log(factorial(10));
+
+
+//Fibonacci
+
+function fib(x){
+  var arr=[0,1];
+  for(var i =2; i<= x; i++){
+    arr[i]=arr[i-2]+arr[i-1];
+    arr.push(arr[i]);
+  }
+  return arr[x];
+}
+console.log(fib(20));
+  
+
+function fib(i){
+  if (i<2){
+    return i;
+  } 
+    return fib(i-2)+fib(i-1);   
+  
+  }
+console.log(fib(20));
+  
+
+Second to Last:
+
+function secondToLast(arr){
+    if (arr.length >=2){
+    return arr[arr.length-2];
+  }
+  return null;
+}
+console.log(arr[arr.length-2]);
+  
+
+Nth to Last:
+var arr = [3,4,6,8,0,4,10];
+function nToLast(n){
+  if(arr.length>=2 && n<arr.length){
+    console.log(arr[arr.length-n]);
+    return arr[arr.length-n];
+    
+  }
+  return null;
+}
+nToLast(3);
+
+
+second largest
+  var arr = [2,7,4,9,36];
+  var max = arr[0];
+  var secondMax = null;
+function secondL(){
+for (var i = 0; i<arr.length; i ++)
+   {
+     if (max<arr[i]){
+       secondMax = max;//assign second largest to become largest
+       max = arr[i];
+      
+       if(arr[i]>secondMax && arr[i]!==max)//now iterate to find next largest, but not equal to the largest
+       {
+         secondMax  = arr[i]; 
+       }
+     }
+     }
+  console.log(secondMax);
+  return secondMax;
+  }
+  secondL();
+
+double trouble
+var arr = [3,5,6,4,8,2];
+function doubleTrouble(arr){
+  for(var i = 1; i< arr.length; i+2){
+    arr.splice(i, "arr[i-1]");
+  }
+  console.log(arr);
+  return arr;
+}
+doubleTrouble();
+
+
+function zip(dict){
+  var 
+  for (var i=0; i<)
+}
+
+var dict = {name:'Chi', 
+            cookies:2};
+
+function unZip(dict){
+  var keys=[];
+  var vals=[];
+  var arr=[];
+  for (var key in dict){
+    keys.push(key);
+    vals.push(dict[key]);
+    
+  }
+    arr.push(keys);
+    arr.push(vals);
+  console.log(arr);
+  return arr;
+
+}
+unZip(dict);
+
+var arr1=['name','age'];
+var arr2=['Chi',12];
+var dict={};
+function zip(){
+  
+  for (var i=0; i<arr1.length; i++){
+    dict[arr1[i]]=arr2[i];
+  }
+}
+zip(dict);
+console.log(dict);
+
+ -->

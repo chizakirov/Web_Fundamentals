@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover In/Out</title>
+
+    <style>
+        img{
+        margin: 10px;
+        height: 200px;
+        }
+
+
+    </style>
+
+
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+    
+        $(document).ready(function(){
+            $('img').hover(function(){
+            
+            //     METHOD 1
+                var temp = $(this).attr('src');
+                $(this).attr('src',$(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src',temp);
+            }, function(){
+                var temp = $(this).attr('data-alt-src');
+                $(this).attr('data-alt-src', $(this).attr('src'));
+                $(this).attr('src',temp);
+            });
+            // });
+            // METHOD 2 - not currently working
+                
+            // $(this).removeClass('pizza');
+            // // console.log('img');
+            // $(this).addClass('github');
+            
+            });
+    
+    
+    </script>
+
+</head>
+<body>
+
+    <div class = "pizza">
+        <img src="img/dough.jpg" data-alt-src="github.png">
+        <img src="img/logo.png"data-alt-src="github.png">
+        <img src="img/pizza.jpg"data-alt-src="github.png">
+        <img src="img/pizza.jpg"data-alt-src="github.png">
+    </div>
+</body>
+</html>

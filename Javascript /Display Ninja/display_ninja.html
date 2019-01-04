@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Ninja</title>
+    <style>
+
+        .ninja{
+            display: inline-block;
+            border: 2px solid blue;
+            height: 100px;
+            width: 100px;
+        }
+        button{
+            background-color: green;
+            
+        }
+    </style>
+     <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('.ninja).click(function(){
+                $(this).hide();
+            });
+
+            $('button').click(function(){
+                $('div:hidden').show();
+            });
+        });
+    </script>
+        
+        
+
+
+
+</head>
+<body>
+    
+    <div class="row">
+        <div class="ninja"></div>
+        <div class="ninja"></div>
+        <div class="ninja"></div>
+        <div class="ninja"></div>
+    </div>
+
+    
+    <div class="row">
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+            <div class="ninja"></div>
+    </div>
+
+    <button>Restore!</button>
+</body>
+</html>

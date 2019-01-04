@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <style type="text/css">
+    div.row div{
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        display: inline-block;
+    }
+    div.brick{
+        background-color: blue;
+        
+    }
+    div.coin{
+        background-image:
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    </style>
+
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    
+
+    <script>
+
+        $(document).ready(function(){
+        $('.brick').click(function hideNow(){ //click()
+            $(this).hide();   //hide()
+        });
+        });
+    
+        $(document).ready(function()
+        {
+            $('button').click(function(){
+                // $('.brick').show();//show
+
+                // $('p').toggle('fast');
+                // if($(".brick").is(":hidden")){
+                $('p:first').addClass("brick");
+                $('.brick:hidden').slideToggle('slow')
+                $('.brick').slideToggle('slow');//toggle
+
+                $("p").before("<em>HERE!</em>");
+                
+                $('h1').html("ok");
+                $('h1').append("Nah");
+
+            });
+        });
+    
+
+        
+    
+    
+    </script>
+
+
+
+</head>
+<body>
+    <h1>hello</h1>
+    <button>Show it!</button>
+    <p>Pak pak </p>
+    <p>Quak quak</p>
+   <div class="row">
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+        <div class="brick"></div>
+   </div>
+   <div class = "row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+    </div>
+    <div class = "row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+        </div>
+    <div class = "row">
+        <div class="brick"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="coin"></div>
+        <div class="brick"></div>
+    </div>
+
+
+    <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frame1</title>
+
+    <style>
+        .top, .bottom{
+            display: block;
+            margin: 5px 60px 0 60px;
+            
+        }
+
+        button{
+            height: 100px;
+            width: 100px;
+        }
+
+        .frame{
+            background-color: grey;
+            height: 400px;
+            width: 500px;
+        }
+
+        #frame2{
+            display: none;
+        }
+
+    
+    </style>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+
+        $(document).ready(function(){
+            
+            
+            $('button').hover(function(){//hover the button and background image will fix on the window
+            
+                $('body').css('background-image',$(this).val());
+            });
+
+
+            $('button').click(function(){//when user clicks on the button, the arena 2 will replace arena 1
+                $('body').css('background-image',$(this).val());
+                $('.frame').toggle();
+
+            });
+            
+
+            $('#group1').change(function(){//when user selects a player, have that player image fixes on the screen
+                $('.img1').attr('src',$(this).val())
+            });
+            $('#group2').change(function(){
+                $('.img2').attr('src',$(this).val())
+            });
+
+
+        });
+    </script>
+
+
+
+</head>
+<body>
+    <div class="frame">
+        <h1>Select Arena</h1>
+
+        <div class="top">
+            <button value = "url('beach.jpg')">beach</button>
+            
+            <button value = "url('earth.jpg')">planet</button>
+            <!-- <img src="planet.jpg" alt="beach image"> -->
+
+            <button value = "url('dojo.jpg')">dojo</button>
+            <!-- <img src="dojo.jpg" alt="beach image"> -->
+
+        </div>
+
+        <div class="bottom">
+            <button value = "url('forest.jpg')">forest</button>
+            <!-- <img src="forest.jpg" alt="beach image"> -->
+
+            <button value = "url('matrix.jpg')">matrix</button>
+            <!-- <img src="matrix.jpg" alt="beach image"> -->
+
+            <button value = "url('snow.jpg')">snow</button>
+            <!-- <img src="snow.jpg" alt="beach image"> -->
+        </div>
+    </div>
+
+    <img class="img1" src="">
+    <img class="img2" src="">
+
+    <div class="frame" id="frame2">
+            
+
+            <select name="ninja" id="group1">
+                <option value = 'leo.png'>Leo</option> 
+    
+                <option value = 'donny.png'>Donny</option> 
+    
+                <option value = 'mikey.png'>Mikey</option> 
+    
+                <option value = 'raphael.png'>Raphael</option> 
+            </select>
+    
+            <select name="ninja" id="group2">
+                    <option value = 'leo.png'>Leo</option> 
+        
+                    <option value = 'donny.png'>Donny</option> 
+        
+                    <option value = 'mikey.png'>Mikey</option> 
+        
+                    <option value = 'raphael.png'>Raphael</option> 
+            </select>
+
+
+        </div>
+        
+    </div>
+
+</body>
+</html>
